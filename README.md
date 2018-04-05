@@ -1,5 +1,5 @@
 # Pahlawan-Indonesia
-Indonesian's Heroes Riddles
+Indonesian Heroes Riddles
 
 Play this riddles game to know more!
 
