@@ -1,18 +1,627 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.widget.LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.ayubaswad.pahlawanindonesia.MainActivity"
+    android:orientation="vertical">
 
-    <TextView
+    <android.widget.LinearLayout
+        android:id="@+id/input_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/pahlawanku_bg"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masukkan nama Anda"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginLeft="16dp"/>
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masuk"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="setUserName"/>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/welcome_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Selamat datang, Ayub!"/>
+
+        <TextView
+            android:id="@+id/help_tv"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/welcome_tv"
+            android:layout_height="wrap_content"
+            android:text="@string/help_text"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mulai"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="displayQuestion1"/>
+
+    </android.widget.RelativeLayout>
+
+    <android.widget.RelativeLayout
+        android:id="@+id/status_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone"
+        android:padding="8dp">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/chances_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kesempatan: "
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayub Aswad"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_alignParentRight="true"/>
+
+    </android.widget.RelativeLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/radeng_ajeng_kartini"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radeng_ajeng_kartini"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Raden Ajeng Kartini"
+                android:onClick="checkQues1OptTrue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MARTHA CHRISTINA TIAHAHU"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tjoet Nyak Meutia"
+                android:onClick="checkQuesOptWrong"/>
+
+        </LinearLayout>
+
+
+
+    </android.widget.LinearLayout>
+
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/soekarno"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/soekarno"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UNTUNG SUROPATI"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KI HADJAR DEWANTARA"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ir. Soekarno"
+                android:onClick="checkQues2OptTrue"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/soetomo"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/soetomo"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soetomo"
+                android:onClick="checkQues3OptTrue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pangeran Antasari"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KI HADJAR DEWANTARA"
+                android:onClick="checkQuesOptWrong"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/martha_christina_tiahahu"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/martha_christina_tiahahu"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cut Nyak Dhien"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Martha Christina Tiahahu"
+                android:onClick="checkQues4OptTrue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dewi Sartika"
+                android:onClick="checkQuesOptWrong"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/sultan_hasanuddin"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sultan_hasanuddin"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I Gusti Ngurah Rai"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sultan Hasanuddin"
+                android:onClick="checkQues5OptTrue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soedirman"
+                android:onClick="checkQuesOptWrong"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal6_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/soewardi_soerjaningrat"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/soewardi"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wahidin Sudirohusodo"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pengeran Diponegoro"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soewardi Soerjanignrat"
+                android:onClick="checkQues6OptTrue"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/soal7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/frans_kaisepo"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/frans_kaisepo"
+                android:padding="8dp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sisingamangaraja XII"
+                android:onClick="checkQuesOptWrong"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frans Kaisiepo"
+                android:onClick="checkQues7OptTrue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pattimura"
+                android:onClick="checkQuesOptWrong"/>
+
+        </LinearLayout>
+
+    </android.widget.LinearLayout>
+
+    <android.widget.RelativeLayout
+        android:id="@+id/summary_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/congrats_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Selamat, Ayub!"/>
+
+        <TextView
+            android:id="@+id/hasil_anda_tv"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/congrats_tv"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Hasil Anda"/>
+
+        <TextView
+            android:id="@+id/score_tv"
+            android:layout_width="match_parent"
+            android:textSize="56dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/hasil_anda_tv"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp"
+            android:text="80"/>
+
+        <TextView
+            android:id="@+id/dengan_predikat_tv"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/score_tv"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="dengan predikat"/>
+
+        <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="match_parent"
+            android:textSize="24dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/dengan_predikat_tv"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Sangat Baik"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hubungi Developer"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="contactDeveloper"/>
+
+    </android.widget.RelativeLayout>
+
+    <android.widget.RelativeLayout
+        android:id="@+id/sorry_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/sorry_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Jangan menyerah, Ayub!"/>
+
+        <TextView
+            android:id="@+id/sorry_text_tv"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/sorry_tv"
+            android:layout_height="wrap_content"
+            android:text="Ini bukan kegagalan. Tapi ini adalah langkah awal untuk berhasil. Silhakan belajar lagi soal pahlawan Indonesia. Setelah itu, buka lagi aplikasi Pahlawanku dan jawab tantangan kami."/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HUBUNGI DEVELOPER"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="contactDeveloper"/>
+
+    </android.widget.RelativeLayout>
+
+
+</android.widget.LinearLayout>
