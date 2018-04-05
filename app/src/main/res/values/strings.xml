@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Pahlawan Indonesia</string>
+    <string name="app_name">Pahlawanku</string>
+    <string name="help_text">Dalam aplikasi ini, Anda akan diminta menjawab nama pahlawan berdasarkan gambar diatasnya. Anda cukup melihat gambar dengan teliti dan membaca clue yang tersedia, kemudian menekan tombol sesuai dengan nama pahlawan yang bersangkutan.  Anda akan diberikan batasan 3 kali kesempatan menjawab salah. Jika Anda salah, Anda akan mendapatkan notifikasi dan kesempatan Anda berkurang 1. Jika kesempatan Anda habis maka Anda tidak dapat lanjut ke soal berikutnya. Jika Anda telah menyelesaikan semua pertanyaan, Anda akan dapat melihat skor Anda dan predikat yang Anda capai. Selamat mencoba! </string>
+    <string name="radeng_ajeng_kartini">Lahir 21 April 1879 di Jepara, Jawa Tengah, Hindia Belanda. Dikenal sebagai pelopor kebangkitan perempuan pribumi. </string>
+    <string name="soekarno">Orang yang pertama kali mencetuskan konsep mengenai Pancasila sebagai dasar negara Indonesia.</string>
+    <string name="soetomo">Pahlawan yang terkenal karena peranannya dalam membangkitkan semangat rakyat untuk melawan kembalinya penjajah Belanda melalui tentara NICA</string>
+    <string name="martha_christina_tiahahu">Seorang puteri remaja yang langsung terjun dalam medan pertempuran melawan tentara kolonial Belanda dalam perang Pattimura tahun 1817.</string>
+    <string name="sultan_hasanuddin">Belanda memberinya gelar de Haav van de Oesten alias Ayam Jantan dari Timur karena kegigihannya dan keberaniannya dalam melawan Kolonial belanda</string>
+    <string name="soewardi">Tanggal kelahirannya sekarang diperingati di Indonesia sebagai Hari Pendidikan Nasional. Bagian dari semboyan ciptaannya, tut wuri handayani, menjadi slogan Kementerian Pendidikan Nasional Indonesia</string>
+    <string name="frans_kaisepo">Dikenal sebagai aktivis gerakan kemerdekaan Republik Indonesia di wilayah Irian (sekarang kembali bernama Papua)</string>
 </resources>
